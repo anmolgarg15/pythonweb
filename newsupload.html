@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/static/bootstrap.min.css" />
+<script src="/static/jquery.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+<script src="/static/jquery-3.3.1.js" ></script>
+</head>
+<body style="background-color:tan;color:white">
+<h1 align="center" style="text-decoration:underline;font-weight:900;text-shadow:4px 3px 4px white">News Upload</h1>
+<form class="form-horizontal" method="POST" action="http://localhost:8000/Life/newsuploadsave" onSubmit="return checkform()" enctype="multipart/form-data">
+{% csrf_token %}
+<br/>
+<div class="form-group">
+<label class="control-label col-sm-3" for="newsheading">Enter News Heading:</label>
+<div class="col-sm-7">
+<input type="text" id="newsheading" name="newsheading" class="form-control" required />
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-3" for="newsdescription">Enter News Description:</label>
+<div class="col-sm-7">
+<textarea id="newsdescription" name="newsdescription" class="form-control" placeholder="Write something..........." style="height:200px"></textarea>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-3" for="media">Enter Media:</label>
+<div class="col-sm-7">
+<input type="file" id="media" name="media" />
+</div>
+</div>
+<input type="hidden" name="newsstatus" value="Active" />
+<input type="submit" value="Submit" style="margin-left:45%;border-radius:12px;width:150px;height:50px;color:palegoldenrod;background-color:black;font-weight:bold;font-size:25px" />
+</form>
+</body>
+</html>
